@@ -9,7 +9,6 @@ export default function Login() {
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-
     const isInvalid = password === '' || emailAddress === ''
 
     const handleLogin = async (event) => {
@@ -25,14 +24,12 @@ export default function Login() {
     }
 
     useEffect(() => {
-        document.title = 'Login - Instagram'
+        document.title = 'Login'
     }, [])
 
     return (
         <div className="container flex mx-auto max-w-screen-md items-center h-screen">
-            <div className="flex w-3/5">
-                123123
-            </div>
+            <div className="flex w-3/5"></div>
             <div className="flex flex-col w-2/5">
                 <div className="flex flex-col items-center bg-white p-4 border mb-4">
                     <h1 className="flex justify-center w-full">
