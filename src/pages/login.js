@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
-import FirebaseContext from '../context/firebase';
+// import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes'
 
 export default function Login() {
-    const { firebase } = useContext(FirebaseContext)
+    // const { firebase } = useContext(FirebaseContext)
 
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
@@ -14,7 +14,7 @@ export default function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
+            // await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
         } catch (error) {
             setEmailAddress('')
             setPassword('')
@@ -54,7 +54,7 @@ export default function Login() {
                         asdasdasd
                     </h1>
                     {error && <p className="mb-4 text-xs text-red-500">{error}</p>}
-                    <form method="POST">
+                    <form method="POST" onSubmit={handleLogin}>
                         <input
                             aria-label="Enter your email address"
                             className="text-sm w-full mr-3 py-5 px-4 h-2 border rounded mb-2"
