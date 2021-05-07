@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes'
 
 export default function Login() {
+    const usehistory = useHistory();
     // const { firebase } = useContext(FirebaseContext)
-
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+
     const isInvalid = password === '' || emailAddress === ''
 
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
             // await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
+            usehistory.push(ROUTES.DASHBOARD)
         } catch (error) {
             setEmailAddress('')
             setPassword('')
@@ -25,23 +27,6 @@ export default function Login() {
     useEffect(() => {
         document.title = 'Login - Instagram'
     }, [])
-
-
-    // user actions
-    // happy & sad scenarios
-
-    // what happens when a user clicks login? -> firebase
-    // a function that can handle login
-    // handle a succesful login with 
-    // await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-
-    // wrap the await function call to firebase in a try/catch
-    // error: catch(error)
-    // setError(error.message) 
-
-    // extra learnings: test.com
-    // handle the email address validation client side
-    // removes a network call!
 
     return (
         <div className="container flex mx-auto max-w-screen-md items-center h-screen">

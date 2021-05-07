@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import { firebase, FieldValue } from './lib/firebase';
-import FirebaseContext from './context/firebase';
+// import FirebaseContext from './context/firebase';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
